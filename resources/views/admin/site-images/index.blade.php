@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container py-4">
+    <div class="alert alert-warning">
+        <strong>DEBUG:</strong> Jumlah data di tabel site_images = {{ \App\Models\SiteImage::count() }}
+    </div>
+
     <h2 class="mb-4">Kelola Gambar Landing Page</h2>
 
     @if(session('success'))
