@@ -1,4 +1,4 @@
-{$SERVER_NAME:localhost}
+:{$PORT}
 
 root * /app/public
 encode zstd gzip
