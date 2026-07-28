@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="relative h-[520px] bg-maroon-dark flex items-end">
-    <img src="https://source.unsplash.com/1600x900/?indonesian-fashion,batik,heritage" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Hero">
+    <img src="{{ \App\Models\SiteImage::url('hero_banner') }}" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Hero">
     <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
         <h1 class="font-heading text-white text-4xl md:text-5xl font-bold max-w-xl mb-4">Gaya yang Menceritakan Kisah Anda</h1>
         <p class="text-white/90 max-w-lg mb-6">Menghadirkan harmoni antara warisan budaya Nusantara dan desain kontemporer. Koleksi eksklusif untuk mereka yang menghargai setiap detail keindahan dan kemewahan yang abadi.</p>
@@ -31,20 +31,13 @@
         $pria     = $categories->firstWhere('slug', 'pria');
         $kebaya   = $categories->firstWhere('slug', 'kebaya');
         $anak     = $categories->firstWhere('slug', 'anak-anak');
-
-        $catImages = [
-            'wanita'    => 'https://source.unsplash.com/600x800/?indonesian-woman,kebaya,fashion',
-            'pria'      => 'https://source.unsplash.com/600x800/?indonesian-man,batik-shirt,fashion',
-            'kebaya'    => 'https://source.unsplash.com/500x400/?kebaya,traditional-dress',
-            'anak-anak' => 'https://source.unsplash.com/500x400/?children,kids-fashion',
-        ];
     @endphp
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4" style="grid-template-rows: repeat(2, 200px);">
         @if($wanita)
             <a href="{{ route('products.index', ['kategori' => $wanita->slug]) }}"
                class="relative rounded-lg overflow-hidden group md:row-span-2 h-48 md:h-full">
-                <img src="{{ $catImages['wanita'] }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Wanita">
+                <img src="{{ \App\Models\SiteImage::url('category_wanita') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Wanita">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-4 left-4 text-white font-heading text-lg">{{ $wanita->name }}</span>
             </a>
@@ -53,7 +46,7 @@
         @if($pria)
             <a href="{{ route('products.index', ['kategori' => $pria->slug]) }}"
                class="relative rounded-lg overflow-hidden group md:row-span-2 h-48 md:h-full">
-                <img src="{{ $catImages['pria'] }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Pria">
+                <img src="{{ \App\Models\SiteImage::url('category_pria') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Pria">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-4 left-4 text-white font-heading text-lg">{{ $pria->name }}</span>
             </a>
@@ -62,7 +55,7 @@
         @if($kebaya)
             <a href="{{ route('products.index', ['kategori' => $kebaya->slug]) }}"
                class="relative rounded-lg overflow-hidden group h-48 md:h-full">
-                <img src="{{ $catImages['kebaya'] }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Kebaya">
+                <img src="{{ \App\Models\SiteImage::url('category_kebaya') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Kebaya">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-3 left-3 text-white font-medium text-sm">{{ $kebaya->name }}</span>
             </a>
@@ -71,7 +64,7 @@
         @if($anak)
             <a href="{{ route('products.index', ['kategori' => $anak->slug]) }}"
                class="relative rounded-lg overflow-hidden group h-48 md:h-full">
-                <img src="{{ $catImages['anak-anak'] }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Anak-anak">
+                <img src="{{ \App\Models\SiteImage::url('category_anak') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Anak-anak">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-3 left-3 text-white font-medium text-sm">{{ $anak->name }}</span>
             </a>
@@ -87,7 +80,7 @@
             <p class="text-white/80 mb-5">Gunakan kode HERITAGE20 untuk pesanan pertama Anda. Berlaku untuk semua koleksi batik tulis premium dan kebaya sutra pilihan.</p>
             <a href="{{ route('products.index') }}" class="inline-block bg-gold text-maroon-dark px-6 py-3 text-sm font-semibold tracking-wide">DAPATKAN SEKARANG</a>
         </div>
-        <img src="https://source.unsplash.com/700x400/?batik-tulis,textile,close-up" class="rounded shadow-lg" alt="Koleksi Warisan">
+        <img src="{{ \App\Models\SiteImage::url('promo_banner') }}" class="rounded shadow-lg" alt="Koleksi Warisan">
     </div>
 </section>
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
+use App\Http\Controllers\Admin\SiteImageController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -52,4 +53,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
     Route::get('/pesanan', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::patch('/pesanan/{order}', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
+    // ---------- GAMBAR LANDING PAGE ----------
+    Route::get('/site-images', [SiteImageController::class, 'index'])->name('site-images.index');
+    Route::post('/site-images/{siteImage}', [SiteImageController::class, 'update'])->name('site-images.update');
 });
