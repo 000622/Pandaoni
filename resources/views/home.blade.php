@@ -3,7 +3,7 @@
 @section('content')
 
 <section class="relative h-[520px] bg-maroon-dark flex items-end">
-    <img src="{{ \App\Models\SiteImage::url('hero_banner') }}" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Hero">
+    <img src="https://down-id.img.susercontent.com/file/id-11134207-7r990-lxagsj4x3inie0" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Hero">
     <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
         <h1 class="font-heading text-white text-4xl md:text-5xl font-bold max-w-xl mb-4">Gaya yang Menceritakan Kisah Anda</h1>
         <p class="text-white/90 max-w-lg mb-6">Menghadirkan harmoni antara warisan budaya Nusantara dan desain kontemporer. Koleksi eksklusif untuk mereka yang menghargai setiap detail keindahan dan kemewahan yang abadi.</p>
@@ -25,6 +25,12 @@
         kolom 3 dipecah jadi Kebaya (atas) & Anak-anak (bawah).
         Kategori lain (mis. Aksesoris) sengaja TIDAK ditampilkan di section ini,
         sesuai desain asli (aksesoris cukup ada di navbar).
+
+        CATATAN: URL gambar di bawah ini SEMENTARA di-hardcode langsung
+        (bukan lewat SiteImage::url()) karena fitur edit gambar admin
+        masih error dan waktu pengumpulan tugas terbatas.
+        Kalau nanti fitur SiteImage sudah diperbaiki, tinggal kembalikan
+        ke \App\Models\SiteImage::url('category_wanita') dst.
     --}}
     @php
         $wanita   = $categories->firstWhere('slug', 'wanita');
@@ -37,7 +43,7 @@
         @if($wanita)
             <a href="{{ route('products.index', ['kategori' => $wanita->slug]) }}"
                class="relative rounded-lg overflow-hidden group md:row-span-2 h-48 md:h-full">
-                <img src="{{ \App\Models\SiteImage::url('category_wanita') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Wanita">
+                <img src="https://cdn0-production-images-kly.akamaized.net/Zv0kFU0Zd6DQMPAR30pyfigJM4I=/1280x1280/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/5260261/original/071595800_1750565695-Gemini_Generated_Image_3qtd7a3qtd7a3qtd.jpg" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Wanita">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-4 left-4 text-white font-heading text-lg">{{ $wanita->name }}</span>
             </a>
@@ -46,7 +52,7 @@
         @if($pria)
             <a href="{{ route('products.index', ['kategori' => $pria->slug]) }}"
                class="relative rounded-lg overflow-hidden group md:row-span-2 h-48 md:h-full">
-                <img src="{{ \App\Models\SiteImage::url('category_pria') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Pria">
+                <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98q-lq8ttnio800udc" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Pria">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-4 left-4 text-white font-heading text-lg">{{ $pria->name }}</span>
             </a>
@@ -55,7 +61,7 @@
         @if($kebaya)
             <a href="{{ route('products.index', ['kategori' => $kebaya->slug]) }}"
                class="relative rounded-lg overflow-hidden group h-48 md:h-full">
-                <img src="{{ \App\Models\SiteImage::url('category_kebaya') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Kebaya">
+                <img src="https://th.bing.com/th/id/OIP.2ufdEmcqQWGpsmevF8HcEwHaHa?rs=1&pid=ImgDetMain" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Kebaya">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-3 left-3 text-white font-medium text-sm">{{ $kebaya->name }}</span>
             </a>
@@ -64,7 +70,7 @@
         @if($anak)
             <a href="{{ route('products.index', ['kategori' => $anak->slug]) }}"
                class="relative rounded-lg overflow-hidden group h-48 md:h-full">
-                <img src="{{ \App\Models\SiteImage::url('category_anak') }}" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Anak-anak">
+                <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcdz-lrujk7ojbku8b8" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Anak-anak">
                 <div class="absolute inset-0 bg-black/20"></div>
                 <span class="absolute bottom-3 left-3 text-white font-medium text-sm">{{ $anak->name }}</span>
             </a>
@@ -80,7 +86,7 @@
             <p class="text-white/80 mb-5">Gunakan kode HERITAGE20 untuk pesanan pertama Anda. Berlaku untuk semua koleksi batik tulis premium dan kebaya sutra pilihan.</p>
             <a href="{{ route('products.index') }}" class="inline-block bg-gold text-maroon-dark px-6 py-3 text-sm font-semibold tracking-wide">DAPATKAN SEKARANG</a>
         </div>
-        <img src="{{ \App\Models\SiteImage::url('promo_banner') }}" class="rounded shadow-lg" alt="Koleksi Warisan">
+        <img src="https://cdn.nona.my/2024/04/larney6.jpg" class="rounded shadow-lg" alt="Koleksi Warisan">
     </div>
 </section>
 
